@@ -1,0 +1,56 @@
+// theme colors
+$primary: #326dee;
+$secondary: #1ac886;
+$error: #d32752;
+$info: #f6c31c;
+
+// color palette
+$colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "error": $error,
+  "info": $info,
+  "aqua": #00FFFF,
+  "blue": #1919e6,
+  "red": #e61919,
+  "yellow": #e6e619,
+  "green": #19e635,
+  "olive": #808000,
+  "teal": #008080,
+  "orange": #ffa600,
+  "purple": #9900ff,
+  "indigo": #4B0082,
+  "pink": #FE33FF,
+  "gray": #808080,
+  "chocolate": #D2691E,
+  "brown": #A52A2A,
+  "black": black,
+  "white": white
+);
+
+$mobile: 800px;
+
+// spacing
+$base-padding: 0.75rem;
+$base-margin: 0.75rem;
+
+// borders
+$base-border-thickness: 1px;
+$base-border-radius: 20px;
+
+// box-shadow
+$base-box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+
+// font sizes
+$base-font-size: 1rem;
+$font-size-xs: $base-font-size * 0.5;
+$font-size-sm: $base-font-size * 0.75;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 3;
+$font-size-xxxl: $base-font-size * 4;
+
+// font weight
+$base-font-weight: 400;
+$font-weight-md: $base-font-weight + 100;
+$font-weight-bold: $base-font-weight + 200;

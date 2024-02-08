@@ -1,0 +1,62 @@
+
+@each $key, $val in $colors {
+    .text-#{$key} {
+        color: $val
+    }
+    .bg-#{$key} {
+        background-color: $val;
+    }
+    @if ($val == white or $val == black) {
+        .text-hover-#{$key} {
+            &:hover {
+                color: $val;
+            }
+        }
+        .bg-hover-#{$key} {
+            &:hover {
+                background-color: $val;
+            }
+        }
+    } @else {
+        .text-hover-dark-#{$key} {
+            &:hover {
+                color: darken($val, 10%);
+            }
+        }
+        .text-hover-light-#{$key} {
+            &:hover {
+                color: lighten($val, 30%);
+            }
+        }
+        .bg-hover-light-#{$key} {
+            &:hover {
+                background-color: lighten($val, 30%);
+            }
+        }
+        .bg-hover-dark-#{$key} {
+            &:hover {
+                background-color: darken($val, 10%);
+            }
+        }
+    
+        // light variations
+        @for $i from 1 through 9 {
+            .text-#{$key}-light-#{$i} {
+                color: mix(white, $val, $i * 10%);
+            }
+            .bg-#{$key}-light-#{$i} {
+                background-color: mix(white, $val, $i * 10%);
+            }
+        }
+    
+        // dark variations
+        @for $i from 1 through 9 {
+            .text-#{$key}-dark-#{$i} {
+                color: mix(black, $val, $i * 10%);
+            }
+            .bg-#{$key}-dark-#{$i} {
+                background-color: mix(black, $val, $i * 10%);
+            }
+        }
+    }
+}

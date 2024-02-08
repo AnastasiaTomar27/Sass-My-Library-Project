@@ -1,0 +1,61 @@
+@mixin btn($bg-color: #e2e2e2, $b-radius: 0) {
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    padding: $base-padding $base-padding * 2;
+    margin: $base-margin;
+    background-color: $bg-color;
+    border-radius: $b-radius;
+  }
+  
+  .btn {
+    @include btn;
+    &:hover {
+        background-color: grey;
+      }
+  }
+  
+  @each $key, $val in $colors {
+    
+    .btn-#{$key}-rounded {
+        @include btn($val, 10px);
+        @if ($val != white) {
+            &:hover {
+                background-color: lighten($val, 25%);
+            }
+            } @else {
+                &:hover {
+                    background-color: grey;
+                }
+            }
+        
+    }
+    .btn-#{$key}-corners {
+        @include btn($val, 0);
+        @if ($val != white) {
+            &:hover {
+                background-color: lighten($val, 25%);
+            }
+            } @else {
+                &:hover {
+                    background-color: grey;
+                }
+            }
+    }
+    
+    .btn-outlined-#{$key}-rounded {
+      @include btn(#fff, 10px);
+      border: $base-border-thickness solid $val;
+      &:hover {
+        background-color: $val;
+      }
+    }
+    .btn-outlined-#{$key}-corners {
+        @include btn(#fff, 0);
+        border: $base-border-thickness solid $val;
+        &:hover {
+          background-color: $val;
+        }
+      }
+  }
